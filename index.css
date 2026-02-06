@@ -1,0 +1,261 @@
+/* ============================================================
+   ESTILOS DA TELA DE ENTRADA (GATEWAY)
+   Arquivo exclusivo para index.html
+   ============================================================ */
+
+/* Importação da Fonte Poppins */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+/* Variáveis de Design */
+:root {
+  --bg-gradient: linear-gradient(
+    135deg,
+    #0f172a 0%,
+    #033859 100%
+  ); /* Slate Dark */
+  --card-bg: rgba(255, 255, 255, 0.03);
+  --card-border: rgba(255, 255, 255, 0.1);
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+
+  /* Cores do Efeito Dia/Noite */
+  --day-glow: radial-gradient(
+    circle at 25% 50%,
+    rgba(255, 191, 0, 0.473),
+    transparent 50%
+  );
+  --night-glow: radial-gradient(
+    circle at 75% 50%,
+    rgba(0, 102, 255, 0.418),
+    transparent 50%
+  );
+
+  /* Cores das Empresas para o Glow */
+  --brand-a: #033859; /* Caminhos Dourados */
+  --brand-b: #225c73; /* Empresa B */
+}
+
+/* Reset Básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Layout Principal (Tela Cheia) */
+body {
+  background-color: #0f172a; /* Cor base de fundo */
+  height: 100vh;
+  width: 100%;
+  overflow: hidden; /* Evita rolagem */
+  display: flex;
+  justify-content: center; /* Centraliza horizontalmente */
+  align-items: center; /* Centraliza verticalmente */
+  color: var(--text-primary);
+  position: relative;
+}
+
+/* Camada de Fundo (Background Layer) */
+.background-layer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  transition: all 0.8s ease-in-out;
+}
+
+/* Efeito "Dia" (Lado Esquerdo) */
+.background-layer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--day-glow);
+  opacity: 0.6; /* Estado inicial equilibrado */
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
+}
+
+/* Efeito "Noite" (Lado Direito) */
+.background-layer::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--night-glow);
+  opacity: 0.6; /* Estado inicial equilibrado */
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
+}
+
+/* Container Central */
+.gateway-container {
+  text-align: center;
+  padding: 20px;
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Títulos */
+.gateway-title {
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: -1px;
+  margin-bottom: 10px;
+  background: linear-gradient(to right, #fff, #cbd5e1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gateway-subtitle {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  margin-bottom: 60px;
+  font-weight: 400;
+}
+
+/* Container dos Cards (Flexbox) */
+.gateway-cards {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap; /* Permite quebra de linha no mobile */
+  width: 100%;
+}
+
+/* Estilo Individual do Card */
+.gateway-card {
+  background: var(--card-bg);
+  backdrop-filter: blur(16px); /* Blur mais intenso */
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--card-border);
+  border-radius: 24px;
+  width: 320px;
+  height: 380px;
+  cursor: pointer;
+  transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Efeito Hover (Ao passar o mouse) */
+.gateway-card:hover {
+  transform: translateY(-15px) scale(1.03);
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Glow Específico por Empresa */
+.gateway-card.card-a:hover {
+  box-shadow: 0 25px 60px rgba(255, 180, 0, 0.25); /* Glow Dourado Suave */
+}
+
+.gateway-card.card-b:hover {
+  box-shadow: 0 25px 60px rgba(0, 100, 255, 0.25); /* Glow Azul Tecnológico */
+}
+
+/* --- Lógica de Estados do Fundo (Controlado via JS) --- */
+
+/* Quando Hover no Card A (Dia) */
+body.hover-a .background-layer::before {
+  opacity: 1;
+  transform: scale(1.2); /* Intensifica o sol */
+}
+body.hover-a .background-layer::after {
+  opacity: 0; /* Apaga a noite */
+}
+body.hover-a .background-layer {
+  background: linear-gradient(
+    135deg,
+    #1e293b 0%,
+    #334155 100%
+  ); /* Fundo levemente mais claro */
+}
+
+/* Quando Hover no Card B (Noite) */
+body.hover-b .background-layer::after {
+  opacity: 1;
+  transform: scale(1.2); /* Intensifica a noite */
+}
+body.hover-b .background-layer::before {
+  opacity: 0; /* Apaga o dia */
+}
+
+/* Conteúdo do Card */
+.card-content {
+  text-align: center;
+  z-index: 2;
+}
+
+/* Imagem da Logo */
+.card-logo {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  margin-bottom: 30px;
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.3));
+  transition: transform 0.4s ease;
+}
+
+.gateway-card:hover .card-logo {
+  transform: scale(1.1);
+}
+
+/* Nome da Empresa */
+.card-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  letter-spacing: 0.5px;
+}
+
+/* Animação de Entrada (Fade In) */
+.fade-in {
+  animation: fadeInUp 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+/* Delay para os cards aparecerem depois do título */
+.gateway-cards.fade-in {
+  animation-delay: 0.3s;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsividade (Mobile) */
+@media (max-width: 768px) {
+  .gateway-title {
+    font-size: 2rem;
+  }
+
+  .gateway-card {
+    width: 100%;
+    max-width: 280px;
+    height: 320px;
+  }
+}

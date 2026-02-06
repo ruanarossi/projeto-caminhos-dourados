@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Escolha a Empresa</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="index.css" />
+  </head>
+
+  <!-- Adicionamos uma classe específica para estilizar apenas esta página -->
+  <body class="gateway-body">
+    <!-- Camada de Fundo para Efeitos Visuais -->
+    <div class="background-layer"></div>
+
+    <!-- Container Principal -->
+    <main class="gateway-container">
+      <!-- Título com animação -->
+      <h1 class="gateway-title fade-in">Escolha seu caminho</h1>
+      <p class="gateway-subtitle fade-in">Selecione a empresa para continuar</p>
+
+      <!-- Área dos Cards -->
+      <div class="gateway-cards fade-in">
+        <!-- Card Empresa A -->
+        <!-- Redireciona para o arquivo existente empresaA.html -->
+        <div class="gateway-card card-a" onclick="navigateTo('empresaA.html')">
+          <div class="card-content">
+            <!-- Logo real ou placeholder visual -->
+            <img
+              src="imagens/logo-png.png"
+              alt="Logo Caminhos Dourados"
+              class="card-logo"
+              onerror="
+                this.style.display = 'none';
+                this.nextElementSibling.style.display = 'block';
+              "
+            />
+            <h2 class="card-title">Caminhos Dourados</h2>
+          </div>
+        </div>
+
+        <!-- Card Empresa B -->
+        <!-- Redireciona para o arquivo existente empresaB.html -->
+        <div class="gateway-card card-b" onclick="navigateTo('empresaB.html')">
+          <div class="card-content">
+            <img
+              src="imagens/logo.png"
+              alt="Logo Empresa B"
+              class="card-logo"
+              onerror="
+                this.style.display = 'none';
+                this.nextElementSibling.style.display = 'block';
+              "
+            />
+            <h2 class="card-title">TransFre</h2>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- JS -->
+    <script src="script.js"></script>
+  </body>
+</html>
