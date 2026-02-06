@@ -29,15 +29,39 @@ header {
   top: 0;
   z-index: 1000;
   display: flex;
+  flex-direction: column;
+}
+
+.top-bar {
+  width: 100%;
+  background-color: var(--primary);
+  padding: 2px 52px;
+  display: flex;
+  justify-content: flex-end;
   align-items: center;
-  justify-content: space-between;
+}
+
+.top-bar-socials {
+  display: flex;
+  gap: 15px;
+}
+
+.top-bar-socials a {
+  color: var(--branco);
+  font-size: 19px;
+  transition: 0.3s;
+}
+
+.top-bar-socials a:hover {
+  color: var(--secondary);
 }
 
 .header-container {
   display: flex;
   align-items: center;
-  padding: 10px 50px;
+  padding: 0px 50px;
   width: 100%;
+  justify-content: space-between;
 }
 
 .logo {
@@ -57,6 +81,7 @@ nav ul {
   list-style: none;
   display: flex;
   gap: 30px;
+  align-items: center;
 }
 
 nav a {
@@ -75,7 +100,7 @@ nav a.cta-button {
   color: var(--primary);
   padding: 10px 20px;
   border-radius: 5px;
-  font-weight: 400;
+  font-weight: 500;
 }
 
 nav a.cta-button:hover {
@@ -89,83 +114,29 @@ nav a.cta-button:hover {
   cursor: pointer;
 }
 
-/* COMPANY SWITCH */
-.company-switch {
-  margin-left: 20px;
-  margin-right: auto;
-}
-
-.custom-select {
-  position: relative;
-}
-
-.btn-company {
+.btn-switch {
   display: flex;
   align-items: center;
-  gap: 10px;
-  background: transparent;
-  border: 2px solid var(--secondary);
-  color: var(--branco);
-  padding: 8px 16px;
+  gap: 8px;
+  border: 1px solid var(--primary);
+  padding: 7px 12px;
   border-radius: 20px;
-  cursor: pointer;
-  font-weight: 400;
-  transition: 0.3s;
+  font-size: 14px;
+  transition: all 0.3s ease;
 }
 
-.btn-company:hover {
-  background-color: var(--secondary);
-  color: var(--primary);
-}
-
-.btn-company img {
-  height: 24px;
-  width: auto;
-}
-
-.dropdown-options {
-  position: absolute;
-  top: 120%;
-  right: 0;
-  background: var(--branco);
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-  overflow: hidden;
-  display: none;
-  min-width: 220px;
-  z-index: 1100;
-}
-
-.dropdown-options.active {
-  display: block;
-}
-
-.dropdown-item {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 12px 20px;
-  color: var(--primary);
-  cursor: pointer;
-  transition: 0.2s;
-}
-
-.dropdown-item:hover {
-  background-color: var(--cinza);
-}
-
-.dropdown-item img {
-  height: 24px;
-  width: auto;
+nav a.btn-switch:hover {
+  background-color: var(--primary);
+  color: var(--branco);
 }
 
 /* HERO */
 .hero {
-  margin-top: 80px;
-  height: 70vh;
+  margin-top: 135px;
+  height: 72vh;
   background:
-    linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-    url("imagens/hero.png") center/cover no-repeat;
+    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url("imagens/bus2.png") center/cover no-repeat;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -269,7 +240,7 @@ section:nth-of-type(even) {
 .section-img {
   height: 60vh;
   width: 100%;
-  background-image: url("imagens/bus.png");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("imagens/bus3.jpg");
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -782,4 +753,30 @@ body.gateway-body {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+/* WHATSAPP FIXO */
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #25d366;
+  color: #fff;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  z-index: 2000;
+  transition: 0.3s;
+  text-decoration: none;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+  background-color: #1ebe57;
+  color: #fff;
 }

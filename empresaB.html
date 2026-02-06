@@ -18,16 +18,22 @@
   <body>
     <!-- HEADER -->
     <header>
+      <div class="top-bar">
+        <div class="top-bar-socials">
+          <a href="https://www.instagram.com" target="_blank"
+            ><i class="fab fa-instagram"></i
+          ></a>
+          <a href="https://www.facebook.com" target="_blank"
+            ><i class="fab fa-facebook-f"></i
+          ></a>
+          <a href="https://web.whatsapp.com" target="_blank"
+            ><i class="fab fa-whatsapp"></i
+          ></a>
+        </div>
+      </div>
       <div class="header-container">
         <div class="logo">
           <img id="logoEmpresa" src="imagens/logo.png" alt="logo" />
-        </div>
-
-        <div class="company-switch">
-          <select id="companySelect">
-            <option value="caminhos">Caminhos Dourados</option>
-            <option value="empresaB">Empresa B</option>
-          </select>
         </div>
 
         <div class="menu-toggle" id="menuToggle">
@@ -36,11 +42,15 @@
 
         <nav>
           <ul id="menu">
-            <li><a href="#">Home</a></li>
             <li><a href="#">Quem Somos</a></li>
             <li><a href="#">Serviços</a></li>
             <li><a href="#">Frota</a></li>
             <li><a href="#">Localização</a></li>
+            <li>
+              <a href="index.html" class="btn-switch"
+                ><i class="fas fa-exchange-alt"></i> Trocar empresa</a
+              >
+            </li>
             <li><a href="#" class="cta-button">Fale Conosco</a></li>
           </ul>
         </nav>
@@ -308,13 +318,18 @@
 
       <div class="footer-bottom">
         <div class="footer-bottom-content">
-          <p>
-            &copy; 2026 Empresa B. Todos os direitos reservados.
-          </p>
-          <a href="https://www.instagram.com/trioweb.br" target="_blank">Desenvolvido por TrioWeb</a>
+          <p>&copy; 2026 Empresa B. Todos os direitos reservados.</p>
+          <a href="https://www.instagram.com/trioweb.br" target="_blank"
+            >Desenvolvido por TrioWeb</a
+          >
         </div>
       </div>
     </footer>
+
+    <!-- WHATSAPP FIXO -->
+    <a href="https://wa.me/5500000000000" class="whatsapp-float" target="_blank">
+      <i class="fab fa-whatsapp"></i>
+    </a>
 
     <!-- JS -->
     <script src="script.js"></script>
