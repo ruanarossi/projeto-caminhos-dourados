@@ -123,28 +123,41 @@
     <section class="fleet">
       <h2 class="section-title">Nossa Frota</h2>
 
-      <div class="cards">
-        <div class="card">
-          <img src="imagens/empb.png" alt="Ônibus" />
-          <div class="card-content">
-            <h3>Ônibus</h3>
-            <p>Ideal para grandes grupos.</p>
+      <div class="fleet-container">
+        <!-- Coluna de Texto (Esquerda) -->
+        <div class="fleet-text-col">
+          <div id="fleetTextContent">
+            <h3 id="fleetTitle">Ônibus Executivo</h3>
+            <p id="fleetDesc">
+              Conforto superior para longas distâncias, equipado com
+              ar-condicionado, Wi-Fi e poltronas reclináveis.
+            </p>
+            <ul class="fleet-features" id="fleetFeatures">
+              <li><i class="fas fa-users"></i> 44 a 50 Lugares</li>
+              <li><i class="fas fa-couch"></i> Poltronas reclináveis</li>
+              <li><i class="fas fa-snowflake"></i> Ar condicionado</li>
+              <li><i class="fas fa-bolt"></i> USB</li>
+              <li><i class="fas fa-suitcase"></i> Bagageiro Amplo</li>
+              <li><i class="fas fa-restroom"></i> Banheiro</li>
+            </ul>
           </div>
         </div>
 
-        <div class="card">
-          <img src="imagens/empb.png" alt="Micro-ônibus" />
-          <div class="card-content">
-            <h3>Micro-ônibus</h3>
-            <p>Excelente para fretamento empresarial.</p>
+        <!-- Coluna de Imagem (Direita) -->
+        <div class="fleet-image-col">
+          <div class="fleet-carousel">
+            <img
+              src="imagens/empb.png"
+              alt="Veículo da Frota"
+              id="fleetImage"
+              class="fade-transition"
+            />
           </div>
-        </div>
 
-        <div class="card">
-          <img src="imagens/empb.png" alt="Vans" />
-          <div class="card-content">
-            <h3>Vans</h3>
-            <p>Agilidade e conforto.</p>
+          <div class="fleet-controls">
+            <div class="fleet-dots" id="fleetDots">
+              <!-- Bolinhas geradas via JS -->
+            </div>
           </div>
         </div>
       </div>
@@ -161,23 +174,43 @@
           </p>
 
           <div class="location-info">
-            <p>
-              <strong>Endereço:</strong> R. Jandira Belizário Perlingeiro, 540 -
-              Conselheiro Paulino, Nova Friburgo - RJ, 28633-791
-            </p>
-            <p>
-              <strong>Horário de Atendimento:</strong> Segunda a Sexta, das 08h
-              às 17h
-            </p>
-            <p><strong>Telefone/WhatsApp:</strong> (22) 2523-9989</p>
-            <p><strong>E-mail:</strong> atendimento@caminhosdourados.com</p>
+            <ul class="contact-details">
+              <li>
+                <div class="icon-box"><i class="fas fa-map-marker-alt"></i></div>
+                <div class="info-text">
+                  <strong>Endereço</strong>
+                  <p>R. Jandira Belizário Perlingeiro, 540 - Conselheiro Paulino, Nova Friburgo - RJ, 28633-791</p>
+                </div>
+              </li>
+              <li>
+                <div class="icon-box"><i class="fas fa-clock"></i></div>
+                <div class="info-text">
+                  <strong>Horário de Atendimento</strong>
+                  <p>Segunda a Sexta, das 08h às 17h</p>
+                </div>
+              </li>
+              <li>
+                <div class="icon-box"><i class="fas fa-phone-alt"></i></div>
+                <div class="info-text">
+                  <strong>Telefone/WhatsApp</strong>
+                  <p>(22) 2523-9989</p>
+                </div>
+              </li>
+              <li>
+                <div class="icon-box"><i class="fas fa-envelope"></i></div>
+                <div class="info-text">
+                  <strong>E-mail</strong>
+                  <p>atendimento@caminhosdourados.com</p>
+                </div>
+              </li>
+            </ul>
           </div>
 
           <a
             href="https://maps.app.goo.gl/GYiFbj7aVjVDwnkP9"
             target="_blank"
             class="btn-mapa"
-            >Ver no mapa</a
+            ><i class="fas fa-map-marked-alt"></i> Ver no mapa</a
           >
         </div>
 
@@ -327,7 +360,11 @@
     </footer>
 
     <!-- WHATSAPP FIXO -->
-    <a href="https://wa.me/5500000000000" class="whatsapp-float" target="_blank">
+    <a
+      href="https://wa.me/5500000000000"
+      class="whatsapp-float"
+      target="_blank"
+    >
       <i class="fab fa-whatsapp"></i>
     </a>
 
