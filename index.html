@@ -3,61 +3,395 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Escolha a Empresa</title>
+    <title>Caminhos Dourados</title>
 
     <!-- CSS -->
-    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
   </head>
 
-  <!-- Adicionamos uma classe específica para estilizar apenas esta página -->
-  <body class="gateway-body">
-    <!-- Camada de Fundo para Efeitos Visuais -->
-    <div class="background-layer"></div>
-
-    <!-- Container Principal -->
-    <main class="gateway-container">
-      <!-- Título com animação -->
-      <h1 class="gateway-title fade-in">Escolha seu caminho</h1>
-      <p class="gateway-subtitle fade-in">Selecione a empresa para continuar</p>
-
-      <!-- Área dos Cards -->
-      <div class="gateway-cards fade-in">
-        <!-- Card Empresa A -->
-        <!-- Redireciona para o arquivo existente empresaA.html -->
-        <div class="gateway-card card-a" onclick="navigateTo('empresaA.html')">
-          <div class="card-content">
-            <!-- Logo real ou placeholder visual -->
-            <img
-              src="imagens/logo-png.png"
-              alt="Logo Caminhos Dourados"
-              class="card-logo"
-              onerror="
-                this.style.display = 'none';
-                this.nextElementSibling.style.display = 'block';
-              "
-            />
-            <h2 class="card-title">Caminhos Dourados</h2>
+  <body>
+    <!-- HEADER -->
+    <header>
+      <div class="top-bar">
+        <div class="top-bar-socials">
+          <div class="top-bar-left">
+            <span class="top-info"><i class="fa-solid fa-phone"></i> (22) 2523-9989</span>
+            <span class="top-info"><i class="fa-regular fa-clock"></i> Seg-Sex: 08h às 17h</span>
           </div>
-        </div>
-
-        <!-- Card Empresa B -->
-        <!-- Redireciona para o arquivo existente empresaB.html -->
-        <div class="gateway-card card-b" onclick="navigateTo('empresaB.html')">
-          <div class="card-content">
-            <img
-              src="imagens/logo.png"
-              alt="Logo Empresa B"
-              class="card-logo"
-              onerror="
-                this.style.display = 'none';
-                this.nextElementSibling.style.display = 'block';
-              "
-            />
-            <h2 class="card-title">TransFre</h2>
+          <div class="top-bar-right">
+            <a href="https://www.facebook.com" target="_blank"
+              ><i class="fab fa-facebook-f"></i
+            >
+            <a href="https://www.instagram.com" target="_blank"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            </a>
+            </a>
           </div>
         </div>
       </div>
-    </main>
+      <div class="header-container">
+        <div class="logo">
+          <img src="imagens/logo-png.png" alt="logo" />
+        </div>
+
+        <div class="menu-toggle" id="menuToggle">
+          <i class="fas fa-bars"></i>
+        </div>
+
+        <nav>
+          <ul id="menu">
+            <li><a href="#">Quem Somos</a></li>
+            <li><a href="#">Serviços</a></li>
+            <li><a href="#">Frota</a></li>
+            <li><a href="#">Localização</a></li>
+            <li><a href="#" class="cta-button">Fale Conosco</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero" id="heroSection">
+      <div class="hero-content">
+        <h1>Transporte com Segurança e Qualidade</h1>
+        <p>
+          Atuando em Nova Friburgo e região com excelência no transporte de passageiros.
+        </p>
+        <div class="hero-actions">
+          <a href="#servicos" class="btn-hero primary">Conhecer Serviços</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat-item"><i class="fas fa-school"></i> <span>Escolar</span></div>
+          <div class="stat-item"><i class="fas fa-heartbeat"></i> <span>TFD</span></div>
+          <div class="stat-item"><i class="fas fa-bus"></i> <span>Urbano</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TÓPICOS -->
+    <section class="topics" id="servicos">
+      <h2 class="section-title">Nossos Serviços</h2>
+      <div class="services-grid">
+        <!-- Serviço 1 -->
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-school"></i>
+          </div>
+          <h3>Transporte Escolar</h3>
+          <p>
+            Transporte seguro e responsável para estudantes, com veículos adequados e motoristas experientes.
+          </p>
+        </div>
+
+        <!-- Serviço 2 -->
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-heartbeat"></i>
+          </div>
+          <h3>Transporte TFD</h3>
+          <p>
+            Transporte confortável e seguro para pacientes que precisam realizar Tratamento Fora de Domicílio.
+          </p>
+        </div>
+
+        <!-- Serviço 3 -->
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-bus"></i>
+          </div>
+          <h3>Transporte Urbano</h3>
+          <p>
+            Transporte eficiente para passageiros em rotas urbanas, garantindo conforto e pontualidade.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ESTATÍSTICAS (NOSSOS NÚMEROS) -->
+    <section class="stats" id="statsSection">
+      <div class="stats-container">
+        <div class="stat-box">
+          <i class="fas fa-bus"></i>
+          <div class="stat-number" data-target="10">0</div>
+          <p>Veículos na Frota</p>
+        </div>
+        <div class="stat-box">
+          <i class="fas fa-calendar-alt"></i>
+          <div class="stat-number" data-target="5">0</div>
+          <p>Anos de Experiência</p>
+        </div>
+        <div class="stat-box">
+          <i class="fas fa-map-marked-alt"></i>
+          <div class="stat-number" data-target="3">0</div>
+          <p>Cidades Atendidas</p>
+        </div>
+        <div class="stat-box">
+          <i class="fas fa-users"></i>
+          <div class="stat-number" data-target="3000">0</div>
+          <p>Passageiros Transportados</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-img">
+      <img src="imagens/bus3.jpg" alt="imagem" />
+    </div>
+
+    <!-- CARDS -->
+    <section class="fleet">
+      <h2 class="section-title">Nossa Frota</h2>
+
+      <div class="fleet-container">
+        <!-- Coluna de Texto (Esquerda) -->
+        <div class="fleet-text-col">
+          <div id="fleetTextContent">
+            <h3 id="fleetTitle">Ônibus Executivo</h3>
+            <p id="fleetDesc">
+              Conforto superior para longas distâncias, equipado com
+              ar-condicionado, Wi-Fi e poltronas reclináveis.
+            </p>
+            <ul class="fleet-features" id="fleetFeatures">
+              <li><i class="fas fa-users"></i> 44 a 50 Lugares</li>
+              <li><i class="fas fa-couch"></i> Poltronas reclináveis</li>
+              <li><i class="fas fa-snowflake"></i> Ar condicionado</li>
+              <li><i class="fas fa-bolt"></i> USB</li>
+              <li><i class="fas fa-suitcase"></i> Bagageiro Amplo</li>
+              <li><i class="fas fa-restroom"></i> Banheiro</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Coluna de Imagem (Direita) -->
+        <div class="fleet-image-col">
+          <div class="fleet-carousel">
+            <img
+              src="imagens/bus2.png"
+              alt="Veículo da Frota"
+              id="fleetImage"
+              class="fade-transition"
+            />
+          </div>
+
+          <div class="fleet-controls">
+            <div class="fleet-dots" id="fleetDots">
+              <!-- Bolinhas geradas via JS -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LOCALIZAÇÃO -->
+    <section class="location">
+      <div class="location-container">
+        <div class="location-content">
+          <h2 class="section-title">Onde Nos Encontrar</h2>
+          <p class="location-desc">
+            Estamos localizados em um ponto estratégico para melhor atendê-lo.
+            Venha nos visitar ou entre em contato pelos nossos canais.
+          </p>
+
+          <div class="location-info">
+            <ul class="contact-details">
+              <li>
+                <div class="icon-box">
+                  <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <div class="info-text">
+                  <strong>Endereço</strong>
+                  <p>
+                    R. Jandira Belizário Perlingeiro, 540 - Conselheiro Paulino,
+                    Nova Friburgo - RJ, 28633-791
+                  </p>
+                </div>
+              </li>
+              <li>
+                <div class="icon-box"><i class="fas fa-clock"></i></div>
+                <div class="info-text">
+                  <strong>Horário de Atendimento</strong>
+                  <p>Segunda a Sexta, das 08h às 17h</p>
+                </div>
+              </li>
+              <li>
+                <div class="icon-box"><i class="fas fa-phone-alt"></i></div>
+                <div class="info-text">
+                  <strong>Telefone/WhatsApp</strong>
+                  <p>(22) 2523-9989</p>
+                </div>
+              </li>
+              <li>
+                <div class="icon-box"><i class="fas fa-envelope"></i></div>
+                <div class="info-text">
+                  <strong>E-mail</strong>
+                  <p>atendimento@caminhosdourados.com</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <a
+            href="https://maps.app.goo.gl/GYiFbj7aVjVDwnkP9"
+            target="_blank"
+            class="btn-mapa"
+            ><i class="fas fa-map-marked-alt"></i> Ver no mapa</a
+          >
+        </div>
+
+        <div class="location-map">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3692.7346091119302!2d-42.539093923825014!3d-22.250146014735517!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x978a8cc57a9a99%3A0x88eb73c3ab4e0763!2sCaminhos%20Dourados!5e0!3m2!1spt-BR!2sbr!4v1770158557535!5m2!1spt-BR!2sbr"
+            width="600"
+            height="450"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEEDBACK / DEPOIMENTOS -->
+    <section class="testimonials">
+      <h2 class="section-title">
+        Além disso, veja o que nossos passageiros dizem:
+      </h2>
+
+      <div class="carousel-container">
+        <button class="carousel-btn prev-btn">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+
+        <div class="carousel-track-container">
+          <div class="carousel-track">
+            <!-- Card 1 -->
+            <div class="testimonial-card">
+              <img
+                src="https://randomuser.me/api/portraits/women/44.jpg"
+                alt="Foto Cliente"
+              />
+              <div class="stars">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i
+                ><i class="fas fa-star"></i><i class="fas fa-star"></i
+                ><i class="fas fa-star"></i>
+              </div>
+              <h3>Mariana Souza</h3>
+              <p>
+                "Serviço impecável! O motorista foi super atencioso e pontual. O
+                ônibus estava muito limpo e confortável. Recomendo a todos!"
+              </p>
+              <span class="client-role">- Viajante Frequente</span>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="testimonial-card">
+              <img
+                src="https://randomuser.me/api/portraits/men/32.jpg"
+                alt="Foto Cliente"
+              />
+              <div class="stars">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i
+                ><i class="fas fa-star"></i><i class="fas fa-star"></i
+                ><i class="fas fa-star"></i>
+              </div>
+              <h3>Carlos Mendes</h3>
+              <p>
+                "Utilizamos o serviço de fretamento para a empresa e foi a
+                melhor escolha. Segurança e agilidade no trajeto diário."
+              </p>
+              <span class="client-role">- Cliente Corporativo</span>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="testimonial-card">
+              <img
+                src="https://randomuser.me/api/portraits/women/68.jpg"
+                alt="Foto Cliente"
+              />
+              <div class="stars">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i
+                ><i class="fas fa-star"></i><i class="fas fa-star"></i
+                ><i class="fas fa-star"></i>
+              </div>
+              <h3>Fernanda Oliveira</h3>
+              <p>
+                "A excursão para a praia foi maravilhosa. Tudo muito organizado
+                e o veículo era excelente. Com certeza viajarei novamente."
+              </p>
+              <span class="client-role">- Cliente Satisfeita</span>
+            </div>
+          </div>
+        </div>
+
+        <button class="carousel-btn next-btn">
+          <i class="fas fa-chevron-right"></i>
+        </button>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="modern-footer">
+      <div class="footer-content">
+        <!-- Coluna 1: Identidade -->
+        <div class="footer-col brand-col">
+          <img src="imagens/logo-png.png" alt="Logo" class="footer-logo-img" />
+          <p class="footer-cnpj">CNPJ: 00.000.000/0001-00</p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+
+        <!-- Coluna 2: Institucional -->
+        <div class="footer-col links-col">
+          <h4>Institucional</h4>
+          <ul class="footer-links">
+            <li><a href="#">Quem Somos</a></li>
+            <li><a href="#">Serviços</a></li>
+            <li><a href="#">Frota</a></li>
+            <li><a href="#">Fale Conosco</a></li>
+          </ul>
+        </div>
+
+        <!-- Coluna 3: Contato -->
+        <div class="footer-col contact-col">
+          <h4>Contato</h4>
+          <ul class="contact-list">
+            <li>
+              <i class="fas fa-phone-alt"></i>
+              <span>Telefone: (22) 2523-9989</span>
+            </li>
+            <li>
+              <i class="fas fa-envelope"></i>
+              <span>Email: atendimento@caminhosdourados.com</span>
+            </li>
+          </ul>
+          <a href="#" class="btn-rules">Regras de Viagem</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-bottom-content">
+          <p>&copy; 2026 Caminhos Dourados. Todos os direitos reservados.</p>
+          <a href="https://www.instagram.com/trioweb.br" target="_blank"
+            >Desenvolvido por TrioWeb</a
+          >
+        </div>
+      </div>
+    </footer>
+
+    <!-- WHATSAPP FIXO -->
+    <a href="https://wa.me/552225239989" class="whatsapp-float" target="_blank">
+      <i class="fab fa-whatsapp"></i>
+    </a>
 
     <!-- JS -->
     <script src="script.js"></script>
