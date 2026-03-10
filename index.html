@@ -60,17 +60,12 @@
     <!-- HERO -->
     <section class="hero" id="heroSection">
       <div class="hero-content">
-        <h1>Transporte com Segurança e Qualidade</h1>
+        <h1>Transporte Escolar, Urbano e TFD em Nova Friburgo e região</h1>
         <p>
-          Atuando em Nova Friburgo e região com excelência no transporte de passageiros.
+          Segurança, pontualidade e confiança em cada trajeto.
         </p>
         <div class="hero-actions">
           <a href="#servicos" class="btn-hero primary">Conhecer Serviços</a>
-        </div>
-        <div class="hero-stats">
-          <div class="stat-item"><i class="fas fa-school"></i> <span>Escolar</span></div>
-          <div class="stat-item"><i class="fas fa-heartbeat"></i> <span>TFD</span></div>
-          <div class="stat-item"><i class="fas fa-bus"></i> <span>Urbano</span></div>
         </div>
       </div>
     </section>
@@ -80,69 +75,88 @@
       <h2 class="section-title">Nossos Serviços</h2>
       <div class="services-grid">
         <!-- Serviço 1 -->
-        <div class="service-card">
+        <div class="service-card scroll-animate">
           <div class="service-icon">
-            <i class="fas fa-school"></i>
+            <img src="imagens/school.gif" data-gif="imagens/school2.gif" alt="Escolar">
           </div>
           <h3>Transporte Escolar</h3>
           <p>
             Transporte seguro e responsável para estudantes, com veículos adequados e motoristas experientes.
           </p>
+          <ul class="service-benefits">
+            <li><i class="fas fa-check"></i> Segurança total</li>
+            <li><i class="fas fa-check"></i> Monitores treinados</li>
+            <li><i class="fas fa-check"></i> Frota revisada</li>
+          </ul>
+          <button class="btn-details" data-service="escolar">Saiba mais <i class="fas fa-arrow-right"></i></button>
         </div>
 
         <!-- Serviço 2 -->
-        <div class="service-card">
+        <div class="service-card scroll-animate" style="transition-delay: 100ms;">
           <div class="service-icon">
-            <i class="fas fa-heartbeat"></i>
+            <img src="imagens/core.gif" data-gif="imagens/core2.gif" alt="Saúde TFD">
           </div>
           <h3>Transporte TFD</h3>
           <p>
             Transporte confortável e seguro para pacientes que precisam realizar Tratamento Fora de Domicílio.
           </p>
+          <ul class="service-benefits">
+            <li><i class="fas fa-check"></i> Conforto extra</li>
+            <li><i class="fas fa-check"></i> Pontualidade</li>
+            <li><i class="fas fa-check"></i> Atendimento humanizado</li>
+          </ul>
+          <button class="btn-details" data-service="tfd">Saiba mais <i class="fas fa-arrow-right"></i></button>
         </div>
 
         <!-- Serviço 3 -->
-        <div class="service-card">
+        <div class="service-card scroll-animate" style="transition-delay: 200ms;">
           <div class="service-icon">
-            <i class="fas fa-bus"></i>
+            <img src="imagens/bus.gif" data-gif="imagens/bus2.gif" alt="Urbano">
           </div>
           <h3>Transporte Urbano</h3>
           <p>
             Transporte eficiente para passageiros em rotas urbanas, garantindo conforto e pontualidade.
           </p>
+          <ul class="service-benefits">
+            <li><i class="fas fa-check"></i> Rotas otimizadas</li>
+            <li><i class="fas fa-check"></i> Agilidade</li>
+            <li><i class="fas fa-check"></i> Preço acessível</li>
+          </ul>
+          <button class="btn-details" data-service="urbano">Saiba mais <i class="fas fa-arrow-right"></i></button>
         </div>
       </div>
     </section>
+
+    <!-- IMAGEM DE FUNDO -->
+    <div class="section-img"></div>
 
     <!-- ESTATÍSTICAS (NOSSOS NÚMEROS) -->
     <section class="stats" id="statsSection">
       <div class="stats-container">
         <div class="stat-box">
           <i class="fas fa-bus"></i>
-          <div class="stat-number" data-target="10">0</div>
+          <div class="stat-number" data-target="150">0</div>
           <p>Veículos na Frota</p>
         </div>
         <div class="stat-box">
           <i class="fas fa-calendar-alt"></i>
-          <div class="stat-number" data-target="5">0</div>
+          <div class="stat-number" data-target="22">0</div>
           <p>Anos de Experiência</p>
         </div>
+       
         <div class="stat-box">
-          <i class="fas fa-map-marked-alt"></i>
-          <div class="stat-number" data-target="3">0</div>
-          <p>Cidades Atendidas</p>
+          <i class="fas fa-route"></i>
+          <div class="stat-number" data-target="140000">0</div>
+          <p>Viagens por ano</p>
         </div>
         <div class="stat-box">
           <i class="fas fa-users"></i>
           <div class="stat-number" data-target="3000">0</div>
-          <p>Passageiros Transportados</p>
+          <p>Alunos Transportados diariamente</p>
         </div>
+         
       </div>
     </section>
-
-    <div class="section-img">
-      <img src="imagens/bus3.jpg" alt="imagem" />
-    </div>
 
     <!-- CARDS -->
     <section class="fleet">
@@ -159,11 +173,15 @@
             </p>
             <ul class="fleet-features" id="fleetFeatures">
               <li><i class="fas fa-users"></i> 44 a 50 Lugares</li>
-              <li><i class="fas fa-couch"></i> Poltronas reclináveis</li>
               <li><i class="fas fa-snowflake"></i> Ar condicionado</li>
-              <li><i class="fas fa-bolt"></i> USB</li>
-              <li><i class="fas fa-suitcase"></i> Bagageiro Amplo</li>
+              <li><i class="fas fa-glass-water"></i> Frigobar</li>
+              <li><i class="fas fa-wind"></i> Suspensão a ar</li>
+              <li><i class="fas fa-compact-disc"></i> DVD</li>
+              <li><i class="fas fa-music"></i> Rádio</li>
+              <li><i class="fas fa-microphone"></i> Microfone</li>
               <li><i class="fas fa-restroom"></i> Banheiro</li>
+              <li><i class="fas fa-video"></i> 100% monitorada</li>
+              
             </ul>
           </div>
         </div>
@@ -207,7 +225,7 @@
                 <div class="info-text">
                   <strong>Endereço</strong>
                   <p>
-                    R. Jandira Belizário Perlingeiro, 540 - Conselheiro Paulino,
+                    R. Jandira Belizário Perlingeiro, 540 - Duas Pedras,
                     Nova Friburgo - RJ, 28633-791
                   </p>
                 </div>
@@ -222,7 +240,7 @@
               <li>
                 <div class="icon-box"><i class="fas fa-phone-alt"></i></div>
                 <div class="info-text">
-                  <strong>Telefone/WhatsApp</strong>
+                  <strong>Telefone</strong>
                   <p>(22) 2523-9989</p>
                 </div>
               </li>
@@ -258,81 +276,21 @@
       </div>
     </section>
 
-    <!-- FEEDBACK / DEPOIMENTOS -->
-    <section class="testimonials">
-      <h2 class="section-title">
-        Além disso, veja o que nossos passageiros dizem:
-      </h2>
-
-      <div class="carousel-container">
-        <button class="carousel-btn prev-btn">
-          <i class="fas fa-chevron-left"></i>
-        </button>
-
-        <div class="carousel-track-container">
-          <div class="carousel-track">
-            <!-- Card 1 -->
-            <div class="testimonial-card">
-              <img
-                src="https://randomuser.me/api/portraits/women/44.jpg"
-                alt="Foto Cliente"
-              />
-              <div class="stars">
-                <i class="fas fa-star"></i><i class="fas fa-star"></i
-                ><i class="fas fa-star"></i><i class="fas fa-star"></i
-                ><i class="fas fa-star"></i>
-              </div>
-              <h3>Mariana Souza</h3>
-              <p>
-                "Serviço impecável! O motorista foi super atencioso e pontual. O
-                ônibus estava muito limpo e confortável. Recomendo a todos!"
-              </p>
-              <span class="client-role">- Viajante Frequente</span>
-            </div>
-
-            <!-- Card 2 -->
-            <div class="testimonial-card">
-              <img
-                src="https://randomuser.me/api/portraits/men/32.jpg"
-                alt="Foto Cliente"
-              />
-              <div class="stars">
-                <i class="fas fa-star"></i><i class="fas fa-star"></i
-                ><i class="fas fa-star"></i><i class="fas fa-star"></i
-                ><i class="fas fa-star"></i>
-              </div>
-              <h3>Carlos Mendes</h3>
-              <p>
-                "Utilizamos o serviço de fretamento para a empresa e foi a
-                melhor escolha. Segurança e agilidade no trajeto diário."
-              </p>
-              <span class="client-role">- Cliente Corporativo</span>
-            </div>
-
-            <!-- Card 3 -->
-            <div class="testimonial-card">
-              <img
-                src="https://randomuser.me/api/portraits/women/68.jpg"
-                alt="Foto Cliente"
-              />
-              <div class="stars">
-                <i class="fas fa-star"></i><i class="fas fa-star"></i
-                ><i class="fas fa-star"></i><i class="fas fa-star"></i
-                ><i class="fas fa-star"></i>
-              </div>
-              <h3>Fernanda Oliveira</h3>
-              <p>
-                "A excursão para a praia foi maravilhosa. Tudo muito organizado
-                e o veículo era excelente. Com certeza viajarei novamente."
-              </p>
-              <span class="client-role">- Cliente Satisfeita</span>
-            </div>
-          </div>
+    <!-- REDES SOCIAIS -->
+    <section class="social-media">
+      <div class="social-content">
+        <h2 class="section-title">Acompanhe nossas Redes Sociais</h2>
+        <p class="social-desc">
+          Fique por dentro das novidades, novas rotas e comunicados importantes.
+        </p>
+        <div class="social-icons-large">
+          <a href="https://www.instagram.com" target="_blank" class="social-btn instagram">
+            <i class="fab fa-instagram"></i> Instagram
+          </a>
+          <a href="https://www.facebook.com" target="_blank" class="social-btn facebook">
+            <i class="fab fa-facebook-f"></i> Facebook
+          </a>
         </div>
-
-        <button class="carousel-btn next-btn">
-          <i class="fas fa-chevron-right"></i>
-        </button>
       </div>
     </section>
 
@@ -388,10 +346,26 @@
       </div>
     </footer>
 
-    <!-- WHATSAPP FIXO -->
-    <a href="https://wa.me/552225239989" class="whatsapp-float" target="_blank">
-      <i class="fab fa-whatsapp"></i>
+    <!-- BOTÃO VOLTAR AO TOPO -->
+    <a href="#" id="backToTop" class="back-to-top">
+      <i class="fas fa-arrow-up"></i>
+      <span class="back-to-top-text">Voltar ao topo</span>
     </a>
+
+    <!-- MODAL DE SERVIÇOS -->
+    <div id="serviceModal" class="modal-overlay">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <div class="modal-header">
+          <div class="modal-icon-box"><i id="modalIcon" class="fas fa-bus"></i></div>
+          <h3 id="modalTitle">Título do Serviço</h3>
+        </div>
+        <div class="modal-body">
+          <p id="modalDesc">Descrição detalhada do serviço.</p>
+          <ul id="modalBenefitsList" class="modal-benefits"></ul>
+        </div>
+      </div>
+    </div>
 
     <!-- JS -->
     <script src="script.js"></script>

@@ -14,46 +14,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   /* ==========================================
-     2. CARROSSEL DE DEPOIMENTOS
-     ========================================== */
-  const track = document.querySelector(".carousel-track");
-  const prevBtn = document.querySelector(".prev-btn");
-  const nextBtn = document.querySelector(".next-btn");
-  const cards = document.querySelectorAll(".testimonial-card");
-
-  let currentIndex = 0;
-
-  function updateCarousel() {
-    const container = document.querySelector(".carousel-track-container");
-    if (container && track) {
-      const width = container.offsetWidth;
-      track.style.transform = `translateX(-${currentIndex * width}px)`;
-    }
-  }
-
-  if (nextBtn && cards.length > 0) {
-    nextBtn.addEventListener("click", () => {
-      if (currentIndex < cards.length - 1) {
-        currentIndex++;
-        updateCarousel();
-      }
-    });
-  }
-
-  if (prevBtn) {
-    prevBtn.addEventListener("click", () => {
-      if (currentIndex > 0) {
-        currentIndex--;
-        updateCarousel();
-      }
-    });
-  }
-
-  if (track) {
-    window.addEventListener("resize", updateCarousel);
-  }
-
-  /* ==========================================
      3. CARROSSEL DA FROTA (FLEET)
      ========================================== */
   const fleetData = [
@@ -62,11 +22,14 @@ document.addEventListener("DOMContentLoaded", () => {
       desc: "Ideal para viagens longas e grandes grupos. Nossa frota de ônibus executivos oferece o máximo em conforto e segurança, com poltronas reclináveis soft, climatização inteligente e amplo bagageiro.",
       features: [
         { text: "44 a 50 Lugares", icon: "fas fa-users" },
-        { text: "Poltronas reclináveis", icon: "fas fa-couch" },
         { text: "Ar condicionado", icon: "fas fa-snowflake" },
-        { text: "USB", icon: "fas fa-bolt" },
-        { text: "Bagageiro Amplo", icon: "fas fa-suitcase" },
+        { text: "Frigobar", icon: "fas fa-glass-water" },
+        { text: "Suspensão a ar", icon: "fas fa-wind" },
+        { text: "DVD", icon: "fas fa-compact-disc" },
+        { text: "Rádio", icon: "fas fa-music" },
+        { text: "Microfone", icon: "fas fa-microphone" },
         { text: "Banheiro", icon: "fas fa-restroom" },
+        { text: "100% monitorada", icon: "fas fa-video" },
       ],
       image: "imagens/bus2.png",
     },
@@ -75,9 +38,13 @@ document.addEventListener("DOMContentLoaded", () => {
       desc: "A solução perfeita para grupos médios e transfer corporativo. Agilidade no trânsito urbano sem abrir mão do conforto. Perfeito para eventos, city tours e deslocamentos de equipes.",
       features: [
         { text: "28 a 33 Lugares", icon: "fas fa-users" },
-        { text: "Poltronas Reclináveis", icon: "fas fa-couch" },
         { text: "Ar condicionado", icon: "fas fa-snowflake" },
-        { text: "USB", icon: "fas fa-bolt" },
+        { text: "Frigobar", icon: "fas fa-glass-water" },
+        { text: "Suspensão a ar", icon: "fas fa-wind" },
+        { text: "DVD", icon: "fas fa-compact-disc" },
+        { text: "Rádio", icon: "fas fa-music" },
+        { text: "Microfone", icon: "fas fa-microphone" },
+        { text: "100% monitorada", icon: "fas fa-video" },
       ],
       image: "imagens/bus2.png",
     },
@@ -86,10 +53,13 @@ document.addEventListener("DOMContentLoaded", () => {
       desc: "Exclusividade e rapidez para pequenos grupos. Nossas vans são equipadas para oferecer uma experiência VIP, ideal para receptivos em aeroportos e viagens curtas com total privacidade.",
       features: [
         { text: "15 a 20 Lugares", icon: "fas fa-users" },
-        { text: "Poltronas reclináveis", icon: "fas fa-couch" },
         { text: "Ar condicionado", icon: "fas fa-snowflake" },
-        { text: "Vidros Escuros", icon: "fas fa-eye-slash" },
-        { text: "USB", icon: "fas fa-bolt" },
+        { text: "Frigobar", icon: "fas fa-glass-water" },
+        { text: "Suspensão a ar", icon: "fas fa-wind" },
+        { text: "DVD", icon: "fas fa-compact-disc" },
+        { text: "Rádio", icon: "fas fa-music" },
+        { text: "Microfone", icon: "fas fa-microphone" },
+        { text: "100% monitorada", icon: "fas fa-video" },
       ],
       image: "imagens/bus3.jpg",
     },
@@ -195,13 +165,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
       let current = 0;
 
+      const prefix = target === 3 ? "" : "+";
+
       const updateCounter = () => {
         current += increment;
         if (current < target) {
-          counter.innerText = "+" + Math.ceil(current);
+          counter.innerText = prefix + Math.ceil(current);
           setTimeout(updateCounter, 20);
         } else {
-          counter.innerText = "+" + target;
+          counter.innerText = prefix + target;
         }
       };
 
@@ -218,4 +190,163 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     observer.observe(statsSection);
   }
+
+  /* ==========================================
+     5. BOTÃO VOLTAR AO TOPO
+     ========================================== */
+  const backToTopBtn = document.getElementById("backToTop");
+
+  if (backToTopBtn) {
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 300) {
+        backToTopBtn.classList.add("show");
+      } else {
+        backToTopBtn.classList.remove("show");
+      }
+    });
+
+    backToTopBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    });
+  }
+
+  /* ==========================================
+     6. ANIMAÇÃO DE SCROLL (SERVIÇOS)
+     ========================================== */
+  const scrollElements = document.querySelectorAll(".scroll-animate");
+
+  const scrollObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show-animate");
+        }
+      });
+    },
+    { threshold: 0.1 }, // Dispara quando 10% do elemento estiver visível
+  );
+
+  scrollElements.forEach((el) => scrollObserver.observe(el));
+
+  /* ==========================================
+     7. MODAL DE SERVIÇOS
+     ========================================== */
+  const servicesData = {
+    escolar: {
+      title: "Transporte Escolar",
+      desc: "Oferecemos um serviço de transporte escolar completo, priorizando a segurança e o bem-estar dos estudantes. Nossos veículos são inspecionados regularmente e nossos monitores garantem a tranquilidade dos pais desde o embarque até o desembarque na escola ou em casa.",
+      benefits: [
+        "Segurança total com cinto de segurança em todos os bancos",
+        "Motoristas experientes e defensivos",
+        "Veículos revisados periodicamente",
+        "Rotas organizadas para menor tempo de trajeto",
+        "Monitoramento em tempo real",
+      ],
+      icon: "fas fa-school",
+    },
+    tfd: {
+      title: "Transporte TFD",
+      desc: "O Tratamento Fora de Domicílio exige cuidado especial. Nosso serviço é focado em oferecer uma viagem tranquila e confortável para pacientes, com total pontualidade para garantir que nenhum compromisso médico seja perdido.",
+      benefits: [
+        "Conforto extra com poltronas reclináveis",
+        "Pontualidade rigorosa para consultas",
+        "Atendimento humanizado e respeitoso",
+        "Climatização adequada",
+        "Apoio no embarque e desembarque",
+      ],
+      icon: "fas fa-heartbeat",
+    },
+    urbano: {
+      title: "Transporte Urbano",
+      desc: "Conectamos a cidade com eficiência. Nossas rotas urbanas são planejadas para oferecer a melhor mobilidade para a população, com horários consistentes e veículos limpos e conservados.",
+      benefits: [
+        "Rotas otimizadas para evitar atrasos",
+        "Agilidade no deslocamento diário",
+        "Preço acessível e justo",
+        "Veículos com acessibilidade",
+        "Integração com principais pontos da cidade",
+      ],
+      icon: "fas fa-bus",
+    },
+  };
+
+  const modalOverlay = document.getElementById("serviceModal");
+  const closeModalBtn = document.querySelector(".close-modal");
+  const modalTitle = document.getElementById("modalTitle");
+  const modalDesc = document.getElementById("modalDesc");
+  const modalBenefitsList = document.getElementById("modalBenefitsList");
+  const modalIcon = document.getElementById("modalIcon");
+  const detailButtons = document.querySelectorAll(".btn-details");
+
+  function openModal(serviceKey) {
+    const data = servicesData[serviceKey];
+    if (!data) return;
+
+    modalTitle.textContent = data.title;
+    modalDesc.textContent = data.desc;
+    modalIcon.className = data.icon;
+
+    modalBenefitsList.innerHTML = data.benefits
+      .map(
+        (benefit) =>
+          `<li><i class="fas fa-check-circle" style="color: var(--secondary); margin-right: 10px;"></i> ${benefit}</li>`,
+      )
+      .join("");
+
+    modalOverlay.classList.add("active");
+  }
+
+  function closeModal() {
+    modalOverlay.classList.remove("active");
+  }
+
+  if (modalOverlay) {
+    detailButtons.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const serviceKey = btn.getAttribute("data-service");
+        openModal(serviceKey);
+      });
+    });
+
+    closeModalBtn.addEventListener("click", closeModal);
+
+    // Fechar ao clicar fora do modal
+    modalOverlay.addEventListener("click", (e) => {
+      if (e.target === modalOverlay) {
+        closeModal();
+      }
+    });
+
+    // Fechar com a tecla ESC
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && modalOverlay.classList.contains("active")) {
+        closeModal();
+      }
+    });
+  }
+
+  /* ==========================================
+     8. HOVER DOS ÍCONES DE SERVIÇO (GIF)
+     ========================================== */
+  const serviceCards = document.querySelectorAll(".service-card");
+
+  serviceCards.forEach((card) => {
+    const img = card.querySelector(".service-icon img");
+    if (img) {
+      const staticSrc = img.src;
+      const gifSrc = img.getAttribute("data-gif");
+
+      card.addEventListener("mouseenter", () => {
+        if (gifSrc) img.src = gifSrc;
+      });
+
+      card.addEventListener("mouseleave", () => {
+        if (gifSrc) img.src = staticSrc;
+      });
+    }
+  });
 });
