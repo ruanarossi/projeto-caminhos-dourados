@@ -9,6 +9,11 @@
   --cinza: #f4f4f4;
 }
 
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 135px; /* Compensa a altura do menu fixo */
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -95,6 +100,7 @@ header {
   display: flex;
   align-items: center;
   gap: 10px;
+  text-decoration: none;
 }
 
 .logo img {
@@ -625,7 +631,7 @@ section:nth-of-type(even) {
 
 .topics .section-title,
 .fleet .section-title {
-  padding-bottom: 30px;
+  padding-bottom: 12px;
 }
 
 .topics .section-title::after,
@@ -1120,10 +1126,9 @@ section:nth-of-type(even) {
 
 /* Coluna 1: Marca */
 .footer-logo-img {
-  height: 60px;
+  height: 80px;
   width: auto;
   margin-bottom: 15px;
-  filter: brightness(0) invert(1); /* Torna o logo branco se for colorido */
 }
 
 .footer-cnpj {
@@ -1325,4 +1330,42 @@ section:nth-of-type(even) {
   max-width: 160px;
   opacity: 1;
   margin-left: 0;
+}
+
+/* ==========================================
+   PÁGINAS INTERNAS (Ex: Quem Somos)
+   ========================================== */
+.internal-header {
+  margin-top: 135px;
+  background-color: var(--primary);
+  color: var(--branco);
+  padding: 80px 20px;
+  text-align: center;
+  position: relative;
+}
+
+.internal-header h1 {
+  font-size: 40px;
+  color: var(--secondary);
+  margin-bottom: 15px;
+}
+
+.internal-content {
+  padding: 80px 20px;
+  max-width: 900px;
+  margin: 0 auto;
+  line-height: 1.8;
+  color: #555;
+  font-size: 17px;
+}
+
+.internal-content p {
+  margin-bottom: 25px;
+}
+
+.internal-content h2 {
+  color: var(--primary);
+  font-size: 28px;
+  margin-top: 45px;
+  margin-bottom: 20px;
 }

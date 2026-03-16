@@ -11,6 +11,14 @@ document.addEventListener("DOMContentLoaded", () => {
     menuToggle.addEventListener("click", () => {
       menu.classList.toggle("active");
     });
+
+    // Fechar o menu mobile ao clicar em um link
+    const menuLinks = menu.querySelectorAll("a");
+    menuLinks.forEach((link) => {
+      link.addEventListener("click", () => {
+        menu.classList.remove("active");
+      });
+    });
   }
 
   /* ==========================================
@@ -34,7 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
       image: "imagens/bus2.png",
     },
     {
-      title: "Micro-ônibus Premium",
+      title: "Micro-ônibus",
       desc: "A solução perfeita para grupos médios e transfer corporativo. Agilidade no trânsito urbano sem abrir mão do conforto. Perfeito para eventos, city tours e deslocamentos de equipes.",
       features: [
         { text: "28 a 33 Lugares", icon: "fas fa-users" },
@@ -46,7 +54,7 @@ document.addEventListener("DOMContentLoaded", () => {
         { text: "Microfone", icon: "fas fa-microphone" },
         { text: "100% monitorada", icon: "fas fa-video" },
       ],
-      image: "imagens/bus2.png",
+      image: "imagens/bus.png",
     },
     {
       title: "Vans Executivas",
@@ -61,7 +69,20 @@ document.addEventListener("DOMContentLoaded", () => {
         { text: "Microfone", icon: "fas fa-microphone" },
         { text: "100% monitorada", icon: "fas fa-video" },
       ],
-      image: "imagens/bus3.jpg",
+      image: "imagens/van.png",
+    },
+    {
+      title: "Kombis",
+      desc: "Veículos ágeis e práticos, ideais para o transporte escolar em rotas de difícil acesso. Nossas Kombis são especialmente adaptadas para o transporte de crianças com deficiência (PcD), garantindo inclusão, conforto e total segurança durante todo o trajeto.",
+      features: [
+        { text: "15 a 20 Lugares", icon: "fas fa-users" },
+        { text: "Suspensão a ar", icon: "fas fa-wind" },
+        { text: "Rádio", icon: "fas fa-music" },
+        { text: "Microfone", icon: "fas fa-microphone" },
+        { text: "100% monitorada", icon: "fas fa-video" },
+        { text: "Adaptação para PcD", icon: "fas fa-wheelchair" },
+      ],
+      image: "imagens/kombi.png",
     },
   ];
 
@@ -124,7 +145,7 @@ document.addEventListener("DOMContentLoaded", () => {
     fleetInterval = setInterval(() => {
       let nextIndex = (currentFleetIndex + 1) % fleetData.length;
       updateFleetSlide(nextIndex); // Chama update direto para não resetar o timer excessivamente
-    }, 5000);
+    }, 9000);
   }
 
   function resetFleetAutoplay() {
@@ -349,4 +370,41 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     }
   });
+
+  /* ==========================================
+     9. MODAL DE CONTATO
+     ========================================== */
+  const contactModal = document.getElementById("contactModal");
+  const openContactBtn = document.getElementById("openContactModal");
+
+  if (contactModal && openContactBtn) {
+    const closeContactBtn = contactModal.querySelector(".close-modal");
+
+    // Abrir Modal
+    openContactBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      contactModal.classList.add("active");
+    });
+
+    // Fechar Modal no X
+    if (closeContactBtn) {
+      closeContactBtn.addEventListener("click", () => {
+        contactModal.classList.remove("active");
+      });
+    }
+
+    // Fechar Modal clicando fora dele
+    contactModal.addEventListener("click", (e) => {
+      if (e.target === contactModal) {
+        contactModal.classList.remove("active");
+      }
+    });
+
+    // Fechar Modal pressionando a tecla ESC
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && contactModal.classList.contains("active")) {
+        contactModal.classList.remove("active");
+      }
+    });
+  }
 });
