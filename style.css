@@ -609,7 +609,7 @@ section {
 .section-img {
   height: 60vh;
   width: 100%;
-  background-image: url("./imagens/bus3-pb.JPG"); /* Exemplo: ajuste conforme estiver no site do GitHub */
+  background-image: url("./imagens/hero.png"); /* Exemplo: ajuste conforme estiver no site do GitHub */
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
