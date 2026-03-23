@@ -150,7 +150,7 @@ nav a.cta-button:hover {
   height: 72vh;
   background:
     linear-gradient(rgba(3, 56, 89, 0.7), rgba(3, 56, 89, 0.5)),
-    url("imagens/hero2.png") center/cover no-repeat;
+    url("./imagens/hero2.png") center/cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -609,7 +609,7 @@ section {
 .section-img {
   height: 60vh;
   width: 100%;
-  background-image: url("imagens/bus3-pb.jpg");
+  background-image: url("./imagens/bus3-pb.jpg");
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
