@@ -22,7 +22,7 @@ html {
 }
 
 body {
-  background-color: var(--cinza);
+  background-color: #f3f2ef73;
 }
 
 /* HEADER */
@@ -39,7 +39,7 @@ header {
 
 .top-bar {
   width: 100%;
-  background-color: #0f3d5e;
+  background-color: #033859e1;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -152,16 +152,16 @@ nav a.cta-button:hover {
     linear-gradient(rgba(3, 56, 89, 0.7), rgba(3, 56, 89, 0.5)),
     url("imagens/hero2.png") center/cover no-repeat;
   display: flex;
-  justify-content: center;
   align-items: center;
-  text-align: center;
+  justify-content: center;
+  padding: 0 8%;
 }
 
 .hero-content {
   color: var(--branco);
-  padding: 30px;
-  max-width: 900px;
-  animation: fadeInUp 1s ease-out;
+  max-width: 800px;
+  text-align: center;
+  margin-top: 240px; /* Empurra o texto ainda mais para baixo */
 }
 
 .hero-content h1 {
@@ -170,15 +170,19 @@ nav a.cta-button:hover {
   font-weight: 700;
   line-height: 1.2;
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+  animation: fadeInUp 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+  opacity: 0;
 }
 
 .hero-content p {
   font-size: 20px;
   margin-bottom: 35px;
-  opacity: 0.9;
-  max-width: 700px;
+  max-width: 650px;
   margin-left: auto;
   margin-right: auto;
+  animation: fadeInUp 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+  animation-delay: 0.2s;
+  opacity: 0;
 }
 
 .hero-actions {
@@ -187,10 +191,13 @@ nav a.cta-button:hover {
   justify-content: center;
   margin-bottom: 40px;
   flex-wrap: wrap;
+  animation: fadeInUp 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+  animation-delay: 0.4s;
+  opacity: 0;
 }
 
 .btn-hero {
-  padding: 15px 35px;
+  padding: 11px 24px;
   border-radius: 50px;
   text-decoration: none;
   font-weight: 600;
@@ -283,13 +290,9 @@ section {
 
 /* Aumento de espaçamento para a seção de serviços */
 .topics {
-  padding-top: 150px;
+  padding-top: 145px;
   padding-bottom: 150px;
-  background-color: #f9f9f9; /* Fundo leve para destacar os cards brancos */
-}
-
-section:nth-of-type(even) {
-  background-color: var(--branco);
+  background-color: #f3f2ef73;
 }
 
 .services-grid {
@@ -549,7 +552,7 @@ section:nth-of-type(even) {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: var(--branco);
+  background-color: #f3f2ef73;
   z-index: -1;
 }
 
@@ -620,10 +623,14 @@ section:nth-of-type(even) {
 }
 
 /* CARDS */
+.fleet {
+  background-color: #f3f2ef73;
+}
+
 .section-title {
   font-size: 36px;
   text-align: center;
-  margin-bottom: 90px;
+  margin-bottom: 145px;
   color: var(--primary);
   font-weight: 600;
   position: relative;
@@ -656,8 +663,12 @@ section:nth-of-type(even) {
 }
 
 @keyframes waveMove {
-  from { background-position: 0 0; }
-  to { background-position: 20px 0; }
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 20px 0;
+  }
 }
 
 /* NOVA ESTRUTURA FROTA (Premium UI) */
@@ -888,7 +899,7 @@ section:nth-of-type(even) {
 
 /* LOCALIZAÇÃO */
 .location {
-  background-color: #f8fbff; /* 1️⃣ Fundo levemente azulado para contraste */
+  background-color: var(--branco);
   position: relative;
   z-index: 1;
 }
@@ -1036,7 +1047,7 @@ section:nth-of-type(even) {
 
 /* REDES SOCIAIS */
 .social-media {
-  background-color: var(--branco);
+  background-color: #f3f2ef73;
   text-align: center;
   padding: 100px 20px;
 }
