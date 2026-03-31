@@ -47,7 +47,7 @@
 
         <nav>
           <ul id="menu">
-            <li><a href="quem-somos.html">Quem Somos</a></li>
+            <li><a href="quem-somos.html">Nossa Empresa</a></li>
             <li><a href="#servicos">Serviços</a></li>
             <li><a href="#frota">Frota</a></li>
             <li><a href="#localizacao">Localização</a></li>
@@ -72,57 +72,70 @@
 
     <!-- TÓPICOS -->
     <section class="topics" id="servicos">
-      <h2 class="section-title">Nossos Serviços</h2>
+      <div class="section-header">
+        <h2 class="section-title">Nossos Serviços</h2>
+        <p class="section-subtitle">Seu trajeto diário com mais segurança, conforto e tranquilidade.</p>
+      </div>
       <div class="services-grid">
         <!-- Serviço 1 -->
         <div class="service-card scroll-animate">
-          <div class="service-icon">
-            <img src="imagens/school.gif" data-gif="imagens/school2.gif" alt="Escolar">
+          <div class="service-image-container">
+            <!-- Usando imagens profissionais do Unsplash para visual premium -->
+            <img src="imagens/escolar1.jpg" alt="Transporte Escolar" class="service-img">
+            <div class="service-overlay"></div>
+            <h3 class="service-title-overlay">Transporte Escolar</h3>
           </div>
-          <h3>Transporte Escolar</h3>
-          <p>
-            Transporte seguro e responsável para estudantes, com veículos adequados e motoristas experientes.
-          </p>
-          <ul class="service-benefits">
-            <li><i class="fas fa-check"></i> Segurança total</li>
-            <li><i class="fas fa-check"></i> Monitores treinados</li>
-            <li><i class="fas fa-check"></i> Frota revisada</li>
-          </ul>
-          <button class="btn-details" data-service="escolar">Saiba mais <i class="fas fa-arrow-right"></i></button>
+          <div class="service-content">
+            <p class="service-desc">
+              Transporte seguro e responsável para estudantes, com veículos adequados e motoristas experientes.
+            </p>
+            <ul class="service-benefits">
+              <li><i class="fas fa-shield-alt"></i> Segurança total</li>
+              <li><i class="fas fa-user-check"></i> Monitores treinados</li>
+              <li><i class="fas fa-tools"></i> Frota revisada</li>
+            </ul>
+            <button class="btn-details" data-service="escolar">Saiba mais <i class="fas fa-arrow-right"></i></button>
+          </div>
         </div>
 
         <!-- Serviço 2 -->
         <div class="service-card scroll-animate" style="transition-delay: 100ms;">
-          <div class="service-icon">
-            <img src="imagens/core.gif" data-gif="imagens/core2.gif" alt="Saúde TFD">
+          <div class="service-image-container">
+            <img src="https://images.unsplash.com/photo-1516574187841-cb9cc2ca948b?q=80&w=800&auto=format&fit=crop" alt="Transporte TFD" class="service-img">
+            <div class="service-overlay"></div>
+            <h3 class="service-title-overlay">Transporte TFD</h3>
           </div>
-          <h3>Transporte TFD</h3>
-          <p>
-            Transporte confortável e seguro para pacientes que precisam realizar Tratamento Fora de Domicílio.
-          </p>
-          <ul class="service-benefits">
-            <li><i class="fas fa-check"></i> Conforto extra</li>
-            <li><i class="fas fa-check"></i> Pontualidade</li>
-            <li><i class="fas fa-check"></i> Atendimento humanizado</li>
-          </ul>
-          <button class="btn-details" data-service="tfd">Saiba mais <i class="fas fa-arrow-right"></i></button>
+          <div class="service-content">
+            <p class="service-desc">
+              Transporte confortável e seguro para pacientes que precisam realizar Tratamento Fora de Domicílio.
+            </p>
+            <ul class="service-benefits">
+              <li><i class="fas fa-couch"></i> Conforto extra</li>
+              <li><i class="fas fa-clock"></i> Pontualidade rigorosa</li>
+              <li><i class="fas fa-hands-helping"></i> Atendimento humanizado</li>
+            </ul>
+            <button class="btn-details" data-service="tfd">Saiba mais <i class="fas fa-arrow-right"></i></button>
+          </div>
         </div>
 
         <!-- Serviço 3 -->
         <div class="service-card scroll-animate" style="transition-delay: 200ms;">
-          <div class="service-icon">
-            <img src="imagens/bus.gif" data-gif="imagens/bus2.gif" alt="Urbano">
+          <div class="service-image-container">
+            <img src="imagens/urbano1.jpg" alt="Transporte Urbano" class="service-img">
+            <div class="service-overlay"></div>
+            <h3 class="service-title-overlay">Transporte Urbano</h3>
           </div>
-          <h3>Transporte Urbano</h3>
-          <p>
-            Transporte eficiente para passageiros em rotas urbanas, garantindo conforto e pontualidade.
-          </p>
-          <ul class="service-benefits">
-            <li><i class="fas fa-check"></i> Rotas otimizadas</li>
-            <li><i class="fas fa-check"></i> Agilidade</li>
-            <li><i class="fas fa-check"></i> Preço acessível</li>
-          </ul>
-          <button class="btn-details" data-service="urbano">Saiba mais <i class="fas fa-arrow-right"></i></button>
+          <div class="service-content">
+            <p class="service-desc">
+              Transporte eficiente para passageiros em rotas urbanas, garantindo conforto e pontualidade.
+            </p>
+            <ul class="service-benefits">
+              <li><i class="fas fa-map-marked-alt"></i> Rotas otimizadas</li>
+              <li><i class="fas fa-tachometer-alt"></i> Máxima agilidade</li>
+              <li><i class="fas fa-tools"></i> Frota revisada</li>
+            </ul>
+            <button class="btn-details" data-service="urbano">Saiba mais <i class="fas fa-arrow-right"></i></button>
+          </div>
         </div>
       </div>
     </section>
@@ -299,7 +312,7 @@
       <div class="footer-content">
         <!-- Coluna 1: Identidade -->
         <div class="footer-col brand-col">
-          <img src="imagens/logo.png" alt="Logo" class="footer-logo-img" />
+          <img src="imagens/logo-footer.png" alt="Logo" class="footer-logo-img" />
           <p class="footer-cnpj">CNPJ: 05.651.485/0001-05</p>
           <div class="social-links">
             <a href="#"><i class="fab fa-facebook-f"></i></a>
@@ -312,7 +325,7 @@
         <div class="footer-col links-col">
           <h4>Institucional</h4>
           <ul class="footer-links">
-            <li><a href="quem-somos.html">Quem Somos</a></li>
+            <li><a href="quem-somos.html">Nossa Empresa</a></li>
             <li><a href="#">Serviços</a></li>
             <li><a href="#">Frota</a></li>
             <li><a href="#">Fale Conosco</a></li>
@@ -353,16 +366,22 @@
     </a>
 
     <!-- MODAL DE SERVIÇOS -->
-    <div id="serviceModal" class="modal-overlay">
-      <div class="modal-content">
-        <span class="close-modal">&times;</span>
-        <div class="modal-header">
-          <div class="modal-icon-box"><i id="modalIcon" class="fas fa-bus"></i></div>
-          <h3 id="modalTitle">Título do Serviço</h3>
+    <div id="serviceModal" class="modal-overlay premium-overlay">
+      <div class="modal-content premium-modal">
+        <div class="modal-banner">
+          <img id="modalImage" src="" alt="Serviço" class="modal-banner-img">
+          <div class="modal-banner-overlay"></div>
+          <span class="close-modal premium-close"><i class="fas fa-times"></i></span>
+          <div class="modal-banner-text">
+            <div class="modal-icon-box premium-icon"><i id="modalIcon" class="fas fa-bus"></i></div>
+            <h3 id="modalTitle">Título do Serviço</h3>
+          </div>
         </div>
-        <div class="modal-body">
-          <p id="modalDesc">Descrição detalhada do serviço.</p>
-          <ul id="modalBenefitsList" class="modal-benefits"></ul>
+        <div class="modal-body premium-body">
+          <p id="modalDesc" class="premium-desc">Descrição detalhada do serviço.</p>
+          <div class="premium-separator"></div>
+          <h4 class="premium-subtitle">Principais Benefícios</h4>
+          <ul id="modalBenefitsList" class="modal-benefits premium-list"></ul>
         </div>
       </div>
     </div>

@@ -268,6 +268,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "Monitoramento em tempo real",
       ],
       icon: "fas fa-school",
+      image: "imagens/escolar1.jpg",
     },
     tfd: {
       title: "Transporte TFD",
@@ -280,6 +281,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "Apoio no embarque e desembarque",
       ],
       icon: "fas fa-heartbeat",
+      image: "https://images.unsplash.com/photo-1516574187841-cb9cc2ca948b?q=80&w=800&auto=format&fit=crop",
     },
     urbano: {
       title: "Transporte Urbano",
@@ -287,11 +289,11 @@ document.addEventListener("DOMContentLoaded", () => {
       benefits: [
         "Rotas otimizadas para evitar atrasos",
         "Agilidade no deslocamento diário",
-        "Preço acessível e justo",
         "Veículos com acessibilidade",
         "Integração com principais pontos da cidade",
       ],
       icon: "fas fa-bus",
+      image: "imagens/urbano1.jpg",
     },
   };
 
@@ -310,11 +312,13 @@ document.addEventListener("DOMContentLoaded", () => {
     modalTitle.textContent = data.title;
     modalDesc.textContent = data.desc;
     modalIcon.className = data.icon;
+    const modalImage = document.getElementById("modalImage");
+    if (modalImage) modalImage.src = data.image;
 
     modalBenefitsList.innerHTML = data.benefits
       .map(
-        (benefit) =>
-          `<li><i class="fas fa-check-circle" style="color: var(--secondary); margin-right: 10px;"></i> ${benefit}</li>`,
+        (benefit, index) =>
+          `<li style="animation-delay: ${0.08 * index}s"><i class="fas fa-check-circle premium-check"></i> ${benefit}</li>`,
       )
       .join("");
 
@@ -349,27 +353,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   }
-
-  /* ==========================================
-     8. HOVER DOS ÍCONES DE SERVIÇO (GIF)
-     ========================================== */
-  const serviceCards = document.querySelectorAll(".service-card");
-
-  serviceCards.forEach((card) => {
-    const img = card.querySelector(".service-icon img");
-    if (img) {
-      const staticSrc = img.src;
-      const gifSrc = img.getAttribute("data-gif");
-
-      card.addEventListener("mouseenter", () => {
-        if (gifSrc) img.src = gifSrc;
-      });
-
-      card.addEventListener("mouseleave", () => {
-        if (gifSrc) img.src = staticSrc;
-      });
-    }
-  });
 
   /* ==========================================
      9. MODAL DE CONTATO
